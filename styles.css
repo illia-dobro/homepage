@@ -1,8 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -11,13 +19,16 @@
 }
 
 :root {
-  --main-color: hsl(32deg 95% 50%);
+  --main-color: hsl(32, 81%, 56%);
 }
 
 body {
   font-family: Inter, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #cc5577;
+  background-image: url(assets/scattered-forcefields.svg);
+  background-size: cover;
 }
 
 body,
@@ -31,7 +42,6 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
 }
 
 input,
@@ -66,59 +76,96 @@ ul {
 }
 
 .container {
-  width: 1024px;
+  max-width: 1024px;
   margin: 0 auto;
   margin-bottom: 36px;
   margin-top: 12px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.resume {
+  padding: 12px;
 }
 
 .resume__block {
   text-align: center;
+  padding: 12px;
 }
 
 .contact-info__header {
-  text-decoration: underline;
-  text-decoration-color: var(--main-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .contact_info_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 12px;
   padding-bottom: 24px;
 }
 
 .contact-info__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 12px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .contact-info__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  justify-content: space-around;
+  gap: 8px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .contact-info__block--center {
-  width: 150px;
-  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 .contact-info__avatar {
   border-radius: 50%;
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   border: 4px solid var(--main-color);
 }
 
 .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-top: 2px solid var(--main-color);
   border-bottom: 2px solid var(--main-color);
   padding: 12px;
   padding-bottom: 24px;
+}
+
+.intro__icon-wrapper {
+  padding-right: 8px;
 }
 
 .skills {
@@ -132,9 +179,10 @@ ul {
 }
 
 .main-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 48px;
-  border-bottom: 2px solid var(--main-color);
   padding: 12px;
   padding-bottom: 24px;
   text-align: left;
@@ -142,12 +190,54 @@ ul {
 
 .experiences,
 .additional-info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
-.experiences__company-header-durability,
-.experiences__company-project-role,
-.additional-info__education-university-durability {
-  color: rgb(107 106 106);
-  font-size: 0.9rem;
+.additional-info__education-university {
+  padding-bottom: 4px;
+}
+
+.additional-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media screen and (max-width: 640px) {
+  .contact_info_container {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 24px;
+  }
+  .contact-info__block--center {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  .contact-info__block {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .contact-info__item {
+    width: 200px;
+  }
+  .main-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 12px;
+  }
 }
