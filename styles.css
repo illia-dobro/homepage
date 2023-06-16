@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  --main-color: hsl(32deg 95% 50%);
+}
+
+body {
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 4px 18px;
+}
+
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  margin-bottom: 36px;
+  margin-top: 12px;
+}
+
+.resume__block {
+  text-align: center;
+}
+
+.contact-info__header {
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+}
+
+.contact_info_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  padding-bottom: 24px;
+}
+
+.contact-info__item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.contact-info__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.contact-info__block--center {
+  width: 150px;
+  height: 150px;
+}
+
+.contact-info__avatar {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: 4px solid var(--main-color);
+}
+
+.intro {
+  display: flex;
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  padding: 12px;
+  padding-bottom: 24px;
+}
+
+.skills {
+  border-bottom: 2px solid var(--main-color);
+  padding: 12px;
+  padding-bottom: 24px;
+}
+
+.skills__text {
+  text-align: left;
+}
+
+.main-info {
+  display: flex;
+  gap: 48px;
+  border-bottom: 2px solid var(--main-color);
+  padding: 12px;
+  padding-bottom: 24px;
+  text-align: left;
+}
+
+.experiences,
+.additional-info {
+  flex: 1;
+}
+
+.experiences__company-header-durability,
+.experiences__company-project-role,
+.additional-info__education-university-durability {
+  color: rgb(107 106 106);
+  font-size: 0.9rem;
+}
