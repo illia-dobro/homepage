@@ -25,6 +25,11 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
+body,
+html {
+  height: 100%;
+}
 /*
   5. Improve media defaults
 */
@@ -70,6 +75,10 @@ a {
   color: inherit;
 }
 
+ul {
+  padding: 4px 18px;
+}
+
 .container {
   width: 1024px;
   margin: 0 auto;
@@ -89,8 +98,6 @@ a {
 .contact_info_container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 4px;
   padding: 12px;
   padding-bottom: 24px;
 }
@@ -99,6 +106,11 @@ a {
   display: flex;
   gap: 12px;
   align-items: center;
+}
+.contact-info__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .contact-info__block--center {
@@ -134,11 +146,19 @@ a {
 
 .main-info {
   display: flex;
-  justify-content: space-between;
+  gap: 48px;
   border-bottom: 2px solid var(--main-color);
   padding: 12px;
   padding-bottom: 24px;
   text-align: left;
+}
+
+.experiences,
+.additional-info {
+  flex: 1;
+}
+
+.additional-info {
 }
 
 .experiences__company-header-durability,
